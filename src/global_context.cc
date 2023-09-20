@@ -1,38 +1,41 @@
 ﻿#include "pch.h"
 #include "global_context.h"
-#include "http_server.h"
-#include "easylogging++.h"
-#include "hooks.h"
-
+#include "thread_pool.h"
+#include "db.h"
 
 namespace wxhelper {
 
+GlobalContext::~GlobalContext() {
+  if (config.has_value()) {
+    config.reset();
+  }
+  if (log.has_value()) {
+    log.reset();
+  }
+  
+}
 void GlobalContext::initialize(HMODULE module) {
+  state =GlobalContextState::INITIALIZING;
   module_ = module;
-  DWORD base = Utils::GetWeChatWinBase();
-  config.emplace();
-  log.emplace();
-  log->initialize();
-  hide_module.emplace();
   #ifndef _DEBUG
-  hide_module->Hide(module_);
+  Utils::Hide(module);
   #endif
-
-  HttpServer::GetInstance().Init(19088);
-  HttpServer::GetInstance().HttpStart();
+  UINT64 base = Utils::GetWeChatWinBase();
+  config.emplace();
+  config->Initialize();
+  log.emplace();
+  log->Initialize();
+  http_server = std::unique_ptr<HttpServer>( new HttpServer(config->GetPort()));
+  http_server->HttpStart();
+  ThreadPool::GetInstance().Create(2, 8);
+  mgr = std::unique_ptr<Manager>(new Manager(base));
   DB::GetInstance().init(base);
-  contact_mgr.emplace(ContactMgr{base});
-  misc_mgr.emplace(MiscMgr{base});
-  send_mgr.emplace(SendMessageMgr{base});
-  account_mgr.emplace(AccountMgr{base});
-  chat_room_mgr.emplace(ChatRoomMgr{base});
-  sns_mgr.emplace(SNSMgr{base});
+  state =GlobalContextState::INITIALIZED;
 }
 
-void GlobalContext::finally() { 
-  HttpServer::GetInstance().HttpClose(); 
-  hooks::UnHookLog();
-  hooks::UnHookRecvMsg();
-  hooks::UnHookSearchContact();
+void GlobalContext::finally() {
+  if (http_server) {
+    http_server->HttpClose();
+  }
 }
 }  // namespace wxhelper

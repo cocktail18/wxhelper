@@ -3,34 +3,35 @@
 #include <string>
 #include <vector>
 
-#include "base_mgr.h"
 #include "wechat_function.h"
 #include "windows.h"
 #include "singleton.h"
 namespace wxhelper {
 class DB :public Singleton<DB>{
  public:
-  void init(DWORD base);
-  int ExecuteSQL(DWORD db, const char *sql, DWORD callback, void *data);
+  void init(UINT64 base);
+  int ExecuteSQL(UINT64 db, const char *sql, UINT64 callback, void *data);
 
-  int Select(DWORD db_hanle, const char *sql,
+  int Select(UINT64 db_hanle, const char *sql,
              std::vector<std::vector<std::string>> &query_result);
 
   std::vector<void *> GetDbHandles();
-  DWORD GetDbHandleByDbName(wchar_t *dbname);
-  unsigned int GetLocalIdByMsgId(ULONG64 msgid, int &dbIndex);
+  UINT64 GetDbHandleByDbName(wchar_t *dbname);
+  INT64 GetLocalIdByMsgId(ULONG64 msgid, INT64 &dbIndex);
   std::vector<std::string> GetChatMsgByMsgId(ULONG64 msgid);
 
   std::string GetVoiceBuffByMsgId(ULONG64 msgid);
 
- private:
-  int SelectDataInner(DWORD db, const char *sql,
-                      std::vector<std::vector<SqlResult>> &data);
+  std::string GetPublicMsgCompressContentByMsgId(ULONG64 msgid);
 
  private:
-  std::map<std::wstring, DatabaseInfo> dbmap_;
-  std::vector<DatabaseInfo> dbs_;
-  DWORD base_addr_;
+  int SelectDataInner(UINT64 db, const char *sql,
+                      std::vector<std::vector<common::SqlResult>> &data);
+
+ private:
+  std::map<std::wstring, common::DatabaseInfo> dbmap_;
+  std::vector<common::DatabaseInfo> dbs_;
+  UINT64 base_addr_;
 };
 
 }  // namespace wxhelper

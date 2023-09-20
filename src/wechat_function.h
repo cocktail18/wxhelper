@@ -1,221 +1,9 @@
 ﻿#ifndef WXHELPER_WECHAT_FUNCTION_H_
 #define WXHELPER_WECHAT_FUNCTION_H_
-#include <vector>
-#include <string>
 
-// snsDataMgr
-#define WX_SNS_DATA_MGR_OFFSET 0xc39680
-// chatRoomMgr
-#define WX_CHAT_ROOM_MGR_OFFSET 0x78cf20
-// contactMgr
-#define WX_CONTACT_MGR_OFFSET 0x75a4a0
-// syncMgr
-#define WX_SYNC_MGR_OFFSET 0xa87fd0
-// preDownloadMgr
-#define WX_GET_PRE_DOWNLOAD_MGR_OFFSET 0x80f110
-// chatMgr
-#define WX_CHAT_MGR_OFFSET 0x792700
-// videoMgr
-#define WX_VIDEO_MGR_OFFSET 0x829820
-// patMgr
-#define  WX_PAT_MGR_OFFSET  0x931730
-// searchContactMgr
-#define WX_SEARCH_CONTACT_MGR_OFFSET 0xa6cb00
-// appMsgMgr
-#define WX_APP_MSG_MGR_OFFSET   0x76ae20
-// sendMessageMgr
-#define WX_SEND_MESSAGE_MGR_OFFSET 0x768140
-
-
-// setChatMsgValue
-#define WX_INIT_CHAT_MSG_OFFSET 0xf59e40
-
-// chatMsg
-#define WX_NEW_CHAT_MSG_OFFSET 0x76f010
-#define WX_FREE_CHAT_MSG_OFFSET 0x756960
-#define WX_FREE_CHAT_MSG_2_OFFSET 0x6f4ea0
-#define WX_FREE_CHAT_MSG_INSTANCE_COUNTER_OFFSET 0x756e30
-
-
-//sns
-#define WX_SNS_GET_FIRST_PAGE_OFFSET 0x14e2140
-#define WX_SNS_GET_NEXT_PAGE_OFFSET  0x14e21e0
-
-//chat room
-#define WX_GET_CHAT_ROOM_DETAIL_INFO_OFFSET 0xbde090
-// chatRoomInfo
-#define WX_NEW_CHAT_ROOM_INFO_OFFSET 0xe99c40
-#define WX_FREE_CHAT_ROOM_INFO_OFFSET 0xe99f40
-#define WX_DEL_CHAT_ROOM_MEMBER_OFFSET 0xbd22a0
-#define WX_ADD_MEMBER_TO_CHAT_ROOM_OFFSET 0xbd1dc0
-
-
-// chatRoom
-#define WX_INIT_CHAT_ROOM_OFFSET 0xe97890
-#define WX_FREE_CHAT_ROOM_OFFSET 0xe97ab0
-
-#define WX_GET_MEMBER_FROM_CHAT_ROOM_OFFSET 0xbdf260
-#define WX_MOD_CHAT_ROOM_MEMBER_NICK_NAME_OFFSET 0xbd9680
-
-#define WX_TOP_MSG_OFFSET 0xbe1840
-#define WX_REMOVE_TOP_MSG_OFFSET 0xbe1620
-
-#define WX_GET_MEMBER_NICKNAME_OFFSET  0xbdf3f0
-
-#define WX_FREE_CONTACT_OFFSET  0xea7880
-
-// wcpayinfo
-#define WX_NEW_WCPAYINFO_OFFSET 0x7b2e60
-#define WX_FREE_WCPAYINFO_OFFSET 0x79c250
-#define WX_CONFIRM_RECEIPT_OFFSET 0x15e2c20
-
-
-//contact
-#define WX_CONTACT_GET_LIST_OFFSET 0xc089f0
-#define WX_CONTACT_DEL_OFFSET 0xb9b3b0
-
-#define WX_SET_VALUE_OFFSET 0x1f80900
-#define WX_DO_DEL_CONTACT_OFFSET 0xca6480
-#define WX_GET_CONTACT_OFFSET  0xc04e00
-#define WX_DO_VERIFY_USER_OFFSET  0xc02100
-#define WX_VERIFY_MSG_OFFSET  0xf59d40
-#define WX_VERIFY_OK_OFFSET  0xa18bd0
-#define WX_NEW_ADD_FRIEND_HELPER_OFFSET 0xa17d50
-#define WX_FREE_ADD_FRIEND_HELPER_OFFSET 0xa17e70
-
-// pushAttachTask
-
-
-#define WX_PUSH_ATTACH_TASK_OFFSET 0x82bb40
-
-#define WX_FREE_CHAT_MSG_OFFSET 0x756960
-#define WX_GET_MGR_BY_PREFIX_LOCAL_ID_OFFSET 0xbc0370
-#define WX_GET_CURRENT_DATA_PATH_OFFSET 0xc872c0
-#define WX_APP_MSG_INFO_OFFSET 0x7b3d20
-#define WX_GET_APP_MSG_XML_OFFSET 0xe628a0
-#define WX_FREE_APP_MSG_INFO_OFFSET 0x79d900
-#define WX_PUSH_THUMB_TASK_OFFSET 0x82ba40
-#define WX_DOWNLOAD_VIDEO_IMG_OFFSET 0xd46c30
-
-
-
-
-
-// pat
-#define  WX_SEND_PAT_MSG_OFFSET  0x1421940
-#define  WX_RET_OFFSET   0x1D58751
-
-
-//search hook
-#define WX_SEARCH_CONTACT_ERROR_CODE_HOOK_OFFSET 0xe17054
-#define WX_SEARCH_CONTACT_ERROR_CODE_HOOK_NEXT_OFFSET 0xf57a20
-#define WX_SEARCH_CONTACT_DETAIL_HOOK_OFFSET 0xa8ceb0
-#define WX_SEARCH_CONTACT_DETAIL_HOOK_NEXT_OFFSET 0xa8d100
-#define WX_SEARCH_CONTACT_OFFSET 0xcd1510
-
-
-
-//login
-#define WX_LOGOUT_OFFSET 0xe58870
-#define WX_ACCOUNT_SERVICE_OFFSET 0x768c80
-#define WX_GET_APP_DATA_SAVE_PATH_OFFSET 0xf3a610
-#define WX_GET_CURRENT_DATA_PATH_OFFSET 0xc872c0
-
-
-//forward
-#define WX_FORWARD_MSG_OFFSET 0xce6730
-// send file
-#define WX_SEND_FILE_OFFSET     0xb6d1f0
-// send image
-#define WX_SEND_IMAGE_OFFSET  0xce6640
-// send text
-#define WX_SEND_TEXT_OFFSET 0xce6c80
-
-
-//ocr
-#define WX_INIT_OBJ_OFFSET 0x7a98f0
-#define WX_OCR_MANAGER_OFFSET 0x7ae470
-#define WX_DO_OCR_TASK_OFFSET 0x13230c0
-
-
-//storage
-
-#define CONTACT_G_PINSTANCE_OFFSET 0x2ffddc8
-#define DB_MICRO_MSG_OFFSET 0x68
-#define DB_CHAT_MSG_OFFSET 0x1C0
-#define DB_MISC_OFFSET 0x3D8
-#define DB_EMOTION_OFFSET 0x558
-#define DB_MEDIA_OFFSET 0x9B8
-#define DB_BIZCHAT_MSG_OFFSET 0x1120
-#define DB_FUNCTION_MSG_OFFSET 0x11B0
-#define DB_NAME_OFFSET 0x14
-
-#define STORAGE_START_OFFSET  0x13f8
-#define STORAGE_END_OFFSET  0x13fc
-
-#define PUBLIC_MSG_MGR_OFFSET  0x303df74
-#define MULTI_DB_MSG_MGR_OFFSET  0x30403b8
-#define FAVORITE_STORAGE_MGR_OFFSET  0x303fd40
-#define FTS_FAVORITE_MGR_OFFSET  0x2ffe908
-
-#define OP_LOG_STORAGE_VFTABLE 0x2AD3A20
-#define CHAT_MSG_STORAGE_VFTABLE 0x2AC10F0
-#define CHAT_CR_MSG_STORAGE_VFTABLE 0x2ABEF14
-#define SESSION_STORAGE_VFTABLE 0x2AD3578
-#define APP_INFO_STORAGE_VFTABLE 0x2ABCC58
-#define HEAD_IMG_STORAGE_VFTABLE 0x2ACD9DC
-#define HEAD_IMG_URL_STORAGE_VFTABLE 0x2ACDF70
-
-#define BIZ_INFO_STORAGE_VFTABLE 0x2ABD718
-#define TICKET_INFO_STORAGE_VFTABLE 0x2AD5400
-#define CHAT_ROOM_STORAGE_VFTABLE 0x2AC299C
-#define CHAT_ROOM_INFO_STORAGE_VFTABLE 0x2AC245C
-#define MEDIA_STORAGE_VFTABLE 0x2ACE998
-#define NAME_2_ID_STORAGE_VFTABLE 0x2AD222C
-#define EMOTION_PACKAGE_STORAGE_VFTABLE 0x2AC6400
-
-#define EMOTION_STORAGE_VFTABLE 0x2AC7018
-#define BUFINFO_STORAGE_VFTABLE 0x2AC3178
-
-#define CUSTOM_EMOTION_STORAGE_VFTABLE 0x2AC4E90
-#define DEL_SESSIONINFO_STORAGE_VFTABLE 0x2AC5F98
-#define FUNCTION_MSG_STORAGE_VFTABLE 0x2ACD10C
-
-#define FUNCTION_MSG_TASK_STORAGE_VFTABLE 0x2ACC5C8
-#define REVOKE_MSG_STORAGE_VFTABLE 0x2AD27BC
-
-
-
-/*******************hook*********************************************/  
-
-
-// hook image
-#define WX_HOOK_IMG_OFFSET 0xd723dc
-#define WX_HOOK_IMG_NEXT_OFFSET 0xe91d90
-
-
-
-// hook log
-#define WX_HOOK_LOG_OFFSET 0xf57d67
-#define WX_HOOK_LOG_NEXT_OFFSET 0x240ea71
-
-// hook msg
-
-#define WX_RECV_MSG_HOOK_OFFSET 0xd19a0b
-#define WX_RECV_MSG_HOOK_NEXT_OFFSET 0x756960
-#define WX_SNS_HOOK_OFFSET  0x14f9e15
-#define WX_SNS_HOOK_NEXT_OFFSET 0x14fa0a0
-
-
-// hook voice
-#define WX_HOOK_VOICE_OFFSET 0xd4d8d8
-#define WX_HOOK_VOICE_NEXT_OFFSET 0x203d130
-#define WX_SELF_ID_OFFSET 0x2FFD484 
-
-/*******************hook end*********************************************/  
-
-
-/***************************sqlite3***************************************/
+namespace wxhelper {
+namespace common {
+  /***************************sqlite3***************************************/
 #define SQLITE_OK 0 /* Successful result */
 /* beginning-of-error-codes */
 #define SQLITE_ERROR 1       /* Generic error */
@@ -250,207 +38,90 @@
 #define SQLITE_DONE 101      /* sqlite3_step() has finished executing */
 /* end-of-error-codes */
 
-/*
-** CAPI3REF: Extended Result Codes
-** KEYWORDS: {extended result code definitions}
-**
-** In its default configuration, SQLite API routines return one of 30 integer
-** [result codes].  However, experience has shown that many of
-** these result codes are too coarse-grained.  They do not provide as
-** much information about problems as programmers might like.  In an effort to
-** address this, newer versions of SQLite (version 3.3.8 [dateof:3.3.8]
-** and later) include
-** support for additional result codes that provide more detailed information
-** about errors. These [extended result codes] are enabled or disabled
-** on a per database connection basis using the
-** [sqlite3_extended_result_codes()] API.  Or, the extended code for
-** the most recent error can be obtained using
-** [sqlite3_extended_errcode()].
-*/
-#define SQLITE_ERROR_MISSING_COLLSEQ (SQLITE_ERROR | (1 << 8))
-#define SQLITE_ERROR_RETRY (SQLITE_ERROR | (2 << 8))
-#define SQLITE_ERROR_SNAPSHOT (SQLITE_ERROR | (3 << 8))
-#define SQLITE_IOERR_READ (SQLITE_IOERR | (1 << 8))
-#define SQLITE_IOERR_SHORT_READ (SQLITE_IOERR | (2 << 8))
-#define SQLITE_IOERR_WRITE (SQLITE_IOERR | (3 << 8))
-#define SQLITE_IOERR_FSYNC (SQLITE_IOERR | (4 << 8))
-#define SQLITE_IOERR_DIR_FSYNC (SQLITE_IOERR | (5 << 8))
-#define SQLITE_IOERR_TRUNCATE (SQLITE_IOERR | (6 << 8))
-#define SQLITE_IOERR_FSTAT (SQLITE_IOERR | (7 << 8))
-#define SQLITE_IOERR_UNLOCK (SQLITE_IOERR | (8 << 8))
-#define SQLITE_IOERR_RDLOCK (SQLITE_IOERR | (9 << 8))
-#define SQLITE_IOERR_DELETE (SQLITE_IOERR | (10 << 8))
-#define SQLITE_IOERR_BLOCKED (SQLITE_IOERR | (11 << 8))
-#define SQLITE_IOERR_NOMEM (SQLITE_IOERR | (12 << 8))
-#define SQLITE_IOERR_ACCESS (SQLITE_IOERR | (13 << 8))
-#define SQLITE_IOERR_CHECKRESERVEDLOCK (SQLITE_IOERR | (14 << 8))
-#define SQLITE_IOERR_LOCK (SQLITE_IOERR | (15 << 8))
-#define SQLITE_IOERR_CLOSE (SQLITE_IOERR | (16 << 8))
-#define SQLITE_IOERR_DIR_CLOSE (SQLITE_IOERR | (17 << 8))
-#define SQLITE_IOERR_SHMOPEN (SQLITE_IOERR | (18 << 8))
-#define SQLITE_IOERR_SHMSIZE (SQLITE_IOERR | (19 << 8))
-#define SQLITE_IOERR_SHMLOCK (SQLITE_IOERR | (20 << 8))
-#define SQLITE_IOERR_SHMMAP (SQLITE_IOERR | (21 << 8))
-#define SQLITE_IOERR_SEEK (SQLITE_IOERR | (22 << 8))
-#define SQLITE_IOERR_DELETE_NOENT (SQLITE_IOERR | (23 << 8))
-#define SQLITE_IOERR_MMAP (SQLITE_IOERR | (24 << 8))
-#define SQLITE_IOERR_GETTEMPPATH (SQLITE_IOERR | (25 << 8))
-#define SQLITE_IOERR_CONVPATH (SQLITE_IOERR | (26 << 8))
-#define SQLITE_IOERR_VNODE (SQLITE_IOERR | (27 << 8))
-#define SQLITE_IOERR_AUTH (SQLITE_IOERR | (28 << 8))
-#define SQLITE_IOERR_BEGIN_ATOMIC (SQLITE_IOERR | (29 << 8))
-#define SQLITE_IOERR_COMMIT_ATOMIC (SQLITE_IOERR | (30 << 8))
-#define SQLITE_IOERR_ROLLBACK_ATOMIC (SQLITE_IOERR | (31 << 8))
-#define SQLITE_IOERR_DATA (SQLITE_IOERR | (32 << 8))
-#define SQLITE_IOERR_CORRUPTFS (SQLITE_IOERR | (33 << 8))
-#define SQLITE_LOCKED_SHAREDCACHE (SQLITE_LOCKED | (1 << 8))
-#define SQLITE_LOCKED_VTAB (SQLITE_LOCKED | (2 << 8))
-#define SQLITE_BUSY_RECOVERY (SQLITE_BUSY | (1 << 8))
-#define SQLITE_BUSY_SNAPSHOT (SQLITE_BUSY | (2 << 8))
-#define SQLITE_BUSY_TIMEOUT (SQLITE_BUSY | (3 << 8))
-#define SQLITE_CANTOPEN_NOTEMPDIR (SQLITE_CANTOPEN | (1 << 8))
-#define SQLITE_CANTOPEN_ISDIR (SQLITE_CANTOPEN | (2 << 8))
-#define SQLITE_CANTOPEN_FULLPATH (SQLITE_CANTOPEN | (3 << 8))
-#define SQLITE_CANTOPEN_CONVPATH (SQLITE_CANTOPEN | (4 << 8))
-#define SQLITE_CANTOPEN_DIRTYWAL (SQLITE_CANTOPEN | (5 << 8)) /* Not Used */
-#define SQLITE_CANTOPEN_SYMLINK (SQLITE_CANTOPEN | (6 << 8))
-#define SQLITE_CORRUPT_VTAB (SQLITE_CORRUPT | (1 << 8))
-#define SQLITE_CORRUPT_SEQUENCE (SQLITE_CORRUPT | (2 << 8))
-#define SQLITE_CORRUPT_INDEX (SQLITE_CORRUPT | (3 << 8))
-#define SQLITE_READONLY_RECOVERY (SQLITE_READONLY | (1 << 8))
-#define SQLITE_READONLY_CANTLOCK (SQLITE_READONLY | (2 << 8))
-#define SQLITE_READONLY_ROLLBACK (SQLITE_READONLY | (3 << 8))
-#define SQLITE_READONLY_DBMOVED (SQLITE_READONLY | (4 << 8))
-#define SQLITE_READONLY_CANTINIT (SQLITE_READONLY | (5 << 8))
-#define SQLITE_READONLY_DIRECTORY (SQLITE_READONLY | (6 << 8))
-#define SQLITE_ABORT_ROLLBACK (SQLITE_ABORT | (2 << 8))
-#define SQLITE_CONSTRAINT_CHECK (SQLITE_CONSTRAINT | (1 << 8))
-#define SQLITE_CONSTRAINT_COMMITHOOK (SQLITE_CONSTRAINT | (2 << 8))
-#define SQLITE_CONSTRAINT_FOREIGNKEY (SQLITE_CONSTRAINT | (3 << 8))
-#define SQLITE_CONSTRAINT_FUNCTION (SQLITE_CONSTRAINT | (4 << 8))
-#define SQLITE_CONSTRAINT_NOTNULL (SQLITE_CONSTRAINT | (5 << 8))
-#define SQLITE_CONSTRAINT_PRIMARYKEY (SQLITE_CONSTRAINT | (6 << 8))
-#define SQLITE_CONSTRAINT_TRIGGER (SQLITE_CONSTRAINT | (7 << 8))
-#define SQLITE_CONSTRAINT_UNIQUE (SQLITE_CONSTRAINT | (8 << 8))
-#define SQLITE_CONSTRAINT_VTAB (SQLITE_CONSTRAINT | (9 << 8))
-#define SQLITE_CONSTRAINT_ROWID (SQLITE_CONSTRAINT | (10 << 8))
-#define SQLITE_CONSTRAINT_PINNED (SQLITE_CONSTRAINT | (11 << 8))
-#define SQLITE_CONSTRAINT_DATATYPE (SQLITE_CONSTRAINT | (12 << 8))
-#define SQLITE_NOTICE_RECOVER_WAL (SQLITE_NOTICE | (1 << 8))
-#define SQLITE_NOTICE_RECOVER_ROLLBACK (SQLITE_NOTICE | (2 << 8))
-#define SQLITE_WARNING_AUTOINDEX (SQLITE_WARNING | (1 << 8))
-#define SQLITE_AUTH_USER (SQLITE_AUTH | (1 << 8))
-#define SQLITE_OK_LOAD_PERMANENTLY (SQLITE_OK | (1 << 8))
-#define SQLITE_OK_SYMLINK (SQLITE_OK | (2 << 8)) /* internal use only */
-
-
 #define SQLITE_INTEGER  1
 #define SQLITE_FLOAT    2
 #define SQLITE_BLOB     4
 #define SQLITE_NULL     5
 #define SQLITE_TEXT     3
 
-#define SQLITE3_EXEC_OFFSET 0x1e24f70
-#define SQLITE3_BACKUP_INIT_OFFSET 0x1dea900
-#define SQLITE3_PREPARE_OFFSET 0x1e2b8c0
-#define SQLITE3_OPEN_OFFSET 0x1e598b0
-#define SQLITE3_BACKUP_STEP_OFFSET 0x1dead00
-#define SQLITE3_BACKUP_REMAINING_OFFSET 0x1deb440
-#define SQLITE3_BACKUP_PAGECOUNT_OFFSET 0x1deb450
-#define SQLITE3_BACKUP_FINISH_OFFSET 0x1deb340
-#define SQLITE3_SLEEP_OFFSET 0x1e5a0f0
-#define SQLITE3_ERRCODE_OFFSET 0x1e58550
-#define SQLITE3_CLOSE_OFFSET 0x1e56cd0
-#define SQLITE3_STEP_OFFSET 0x1df3770
-#define SQLITE3_COLUMN_COUNT_OFFSET 0x1df3c80
-#define SQLITE3_COLUMN_NAME_OFFSET 0x1df4570
-#define SQLITE3_COLUMN_TYPE_OFFSET 0x1df4410
-#define SQLITE3_COLUMN_BLOB_OFFSET 0x1df3cc0
-#define SQLITE3_COLUMN_BYTES_OFFSET 0x1df3da0
-#define SQLITE3_FINALIZE_OFFSET 0x1df2740
 
-typedef int (*Sqlite3_callback)(void*, int, char**, char**);
 
-typedef int(__cdecl* Sqlite3_exec)(DWORD,            /* An open database */
+
+typedef int (*sqlite3_callback)(void*, int, char**, char**);
+
+typedef int(__cdecl* sqlite3_exec)(UINT64,            /* An open database */
                                    const char* sql,  /* SQL to be evaluated */
-                                   Sqlite3_callback, /* Callback function */
+                                   sqlite3_callback, /* Callback function */
                                    void*,        /* 1st argument to callback */
                                    char** errmsg /* Error msg written here */
 );
-typedef DWORD(__cdecl* Sqlite3_backup_init)(
-    DWORD* pDest,           /* Destination database handle */
-    const char* zDestName,  /* Destination database name */
-    DWORD* pSource,         /* Source database handle */
-    const char* zSourceName /* Source database name */
-);
-typedef int(__cdecl* Sqlite3_prepare)(
-    DWORD db,          /* Database handle */
+
+typedef int(__cdecl* sqlite3_prepare)(
+    UINT64 db,          /* Database handle */
     const char* zSql,   /* SQL statement, UTF-8 encoded */
     int nByte,          /* Maximum length of zSql in bytes. */
-    DWORD** ppStmt,     /* OUT: Statement handle */
+    UINT64** ppStmt,     /* OUT: Statement handle */
     const char** pzTail /* OUT: Pointer to unused portion of zSql */
 );
-typedef int(__cdecl* Sqlite3_open)(const char* filename, DWORD** ppDb);
-typedef int(__cdecl* Sqlite3_backup_step)(DWORD* p, int nPage);
-typedef int(__cdecl* Sqlite3_backup_remaining)(DWORD* p);
-typedef int(__cdecl* Sqlite3_backup_pagecount)(DWORD* p);
-typedef int(__cdecl* Sqlite3_backup_finish)(DWORD* p);
-typedef int(__cdecl* Sqlite3_sleep)(int);
-typedef int(__cdecl* Sqlite3_errcode)(DWORD* db);
-typedef int(__cdecl* Sqlite3_close)(DWORD*);
+typedef int(__cdecl* sqlite3_open)(const char* filename, UINT64** ppDb);
 
-typedef int(__cdecl* Sqlite3_step)(DWORD*);
-typedef int(__cdecl* Sqlite3_column_count)(DWORD* pStmt);
-typedef const char*(__cdecl* Sqlite3_column_name)(DWORD*, int N);
-typedef int(__cdecl* Sqlite3_column_type)(DWORD*, int iCol);
-typedef const void*(__cdecl* Sqlite3_column_blob)(DWORD*, int iCol);
-typedef int(__cdecl* Sqlite3_column_bytes)(DWORD*, int iCol);
-typedef int(__cdecl* Sqlite3_finalize)(DWORD* pStmt);
+typedef int(__cdecl* sqlite3_sleep)(int);
+typedef int(__cdecl* sqlite3_errcode)(UINT64* db);
+typedef int(__cdecl* sqlite3_close)(UINT64*);
+
+typedef int(__cdecl* sqlite3_step)(UINT64*);
+typedef int(__cdecl* sqlite3_column_count)(UINT64* pStmt);
+typedef const char*(__cdecl* sqlite3_column_name)(UINT64*, int N);
+typedef int(__cdecl* sqlite3_column_type)(UINT64*, int iCol);
+typedef const void*(__cdecl* sqlite3_column_blob)(UINT64*, int iCol);
+typedef int(__cdecl* sqlite3_column_bytes)(UINT64*, int iCol);
+typedef int(__cdecl* sqlite3_finalize)(UINT64* pStmt);
 
 
 /***************************sqlite3  end*************************************/
 
+struct TableInfo {
+  char *name;
+  INT64 name_len;
+  char *table_name;
+  INT64 table_name_len;
+  char *sql;
+  INT64 sql_len;
+  char *rootpage;
+  INT64 rootpage_len;
+};
+
+struct DatabaseInfo {
+  UINT64 handle = 0;
+  wchar_t *db_name = NULL;
+  INT64 db_name_len = 0;
+  std::vector<TableInfo> tables;
+  INT64 count = 0;
+  INT64 extrainfo = 0;
+};
+
+
 struct SqlResult {
   char *column_name;
-  DWORD column_name_len;
+  INT64 column_name_len;
   char *content;
-  DWORD content_len;
+  INT64 content_len;
   BOOL is_blob;
 };
 
-struct WeChatString {
-  wchar_t *ptr;
-  DWORD length;
-  DWORD max_length;
-  DWORD c_ptr = 0;
-  DWORD c_len = 0;
-  WeChatString() { WeChatString(NULL); }
 
-  WeChatString(std::wstring &s) {
-    ptr = (wchar_t *)(s.c_str());
-    length = s.length();
-    max_length = s.length() * 2;
-  }
-  WeChatString(const wchar_t *pStr) { WeChatString((wchar_t *)pStr); }
-  WeChatString(int tmp) {
-    ptr = NULL;
-    length = 0x0;
-    max_length = 0x0;
-  }
-  WeChatString(wchar_t *pStr) {
-    ptr = pStr;
-    length = wcslen(pStr);
-    max_length = wcslen(pStr) * 2;
-  }
-  void set_value(const wchar_t *pStr) {
-    ptr = (wchar_t *)pStr;
-    length = wcslen(pStr);
-    max_length = wcslen(pStr) * 2;
+struct InnerMessageStruct {
+  char *buffer;
+  INT64 length;
+  ~InnerMessageStruct() {
+    if (this->buffer != NULL) {
+      delete[] this->buffer;
+      this->buffer = NULL;
+    }
   }
 };
 
-
-struct SelfInfoInner{
+struct SelfInfoInner {
   std::string name;
   std::string city;
   std::string province;
@@ -465,308 +136,320 @@ struct SelfInfoInner{
   std::string db_key;
 };
 
-struct VectorInner {
-#ifdef _DEBUG
-  DWORD head;
-#endif
-  DWORD start;
-  DWORD finsh;
-  DWORD end;
-};
-
-struct TableInfo {
-  char *name;
-  DWORD name_len;
-  char *table_name;
-  DWORD table_name_len;
-  char *sql;
-  DWORD sql_len;
-  char *rootpage;
-  DWORD rootpage_len;
-};
-
-struct DatabaseInfo {
-  DWORD handle = 0;
-  wchar_t *db_name = NULL;
-  DWORD db_name_len = 0;
-  std::vector<TableInfo> tables;
-  DWORD count = 0;
-  DWORD extrainfo = 0;
-};
-
-
-struct Contact {
-  WeChatString wxid;
-  WeChatString custom_account;
-  WeChatString encrypt_name;
-  WeChatString nick_name;
-  WeChatString pinyin;
-  WeChatString pinyin_all;
-  int del_flag;
-  int type;
-  int verify_flag;
-};
-
-struct ChatRoomInfo {
-  DWORD vftable;
-  WeChatString chat_room_id;
-  WeChatString notice;
-  WeChatString admin;
-  DWORD filed_40;
-  DWORD filed_44;
-  DWORD filed_48;
-  DWORD filed_4C;
-  WeChatString xml;
-  DWORD filed_64;
-  DWORD filed_68;
-  DWORD filed_6C;
-  DWORD filed_70;
-  DWORD filed_74;
-  DWORD filed_78;
-  DWORD filed_7C;
-  DWORD filed_80;
-  DWORD filed_84;
-  DWORD filed_88;
-  DWORD filed_8c;
-  DWORD filed_90;
-  DWORD filed_94;
-  DWORD filed_98;
-  DWORD filed_9C;
-  DWORD filed_A0;
+struct ContactInner {
+  std::string wxid;
+  std::string custom_account;
+  std::string encrypt_name;
+  std::string nickname;
+  std::string pinyin;
+  std::string pinyin_all;
+  DWORD type;
+  DWORD verify_flag;
+  DWORD reserved1;
+  DWORD reserved2;
+  ContactInner(){
+    wxid = "";
+    custom_account = "";
+    encrypt_name = "";
+    nickname ="";
+    pinyin ="";
+    pinyin_all ="";
+    type = -1;
+    verify_flag = -1;
+    reserved1 = -1;
+    reserved2 = -1;
+  }
 };
 
 struct ChatRoomInfoInner {
-  WeChatString chat_room_id;
-  WeChatString notice;
-  WeChatString admin;
-  WeChatString xml;
+  std::string chat_room_id;
+  std::string notice;
+  std::string admin;
+  std::string xml;
+  ChatRoomInfoInner(){
+    chat_room_id = "";
+    notice = "";
+    admin = "";
+    xml = "";
+  }
 
-  ~ChatRoomInfoInner(){
-      if(chat_room_id.ptr){
-        delete []chat_room_id.ptr;
-        chat_room_id.ptr = nullptr;
-      }
-      if(notice.ptr){
-        delete []notice.ptr;
-        notice.ptr = nullptr;
-      }
-      if(admin.ptr){
-        delete []admin.ptr;
-        admin.ptr = nullptr;
-      }
-      if(xml.ptr){
-        delete []xml.ptr;
-        xml.ptr = nullptr;
-      }
+};
+
+struct VectorInner {
+#ifdef _DEBUG
+  INT64 head;
+#endif
+  INT64 start;
+  INT64 finsh;
+  INT64 end;
+};
+
+struct ChatRoomMemberInner {
+  std::string chat_room_id;
+  std::string admin;
+  std::string admin_nickname;
+  std::string member_nickname;
+  std::string member;
+  ChatRoomMemberInner()
+      : chat_room_id(""),
+        admin(""),
+        admin_nickname(""),
+        member_nickname(""),
+        member("") {}
+};
+
+struct ContactProfileInner {
+  std::string wxid;
+  std::string account;
+  std::string v3;
+  std::string nickname;
+  std::string head_image;
+  ContactProfileInner()
+      : wxid(""), account(""), v3(""), nickname(""), head_image("") {}
+};
+
+}  // namespace common
+namespace V3_9_5_81 {
+namespace function {
+
+
+typedef UINT64(*__GetAccountService)();
+typedef UINT64(*__GetDataSavePath)(UINT64);
+typedef UINT64(*__GetCurrentDataPath)(UINT64);
+typedef UINT64(*__GetSendMessageMgr)();
+typedef UINT64 (*__SendTextMsg)(UINT64, UINT64, UINT64, UINT64, UINT64, UINT64,
+                                UINT64, UINT64);
+typedef UINT64 (*__FreeChatMsg)(UINT64);
+
+typedef UINT64 (*__SendImageMsg)(UINT64, UINT64, UINT64, UINT64, UINT64);
+typedef UINT64 (*__NewChatMsg)(UINT64);
+typedef UINT64 (*__SendFile)(UINT64, UINT64, UINT64, UINT64, UINT64,UINT64, UINT64, UINT64, UINT64, UINT64, UINT64, UINT64);
+typedef UINT64(*__GetAppMsgMgr)();
+typedef UINT64(*__OperatorNew)(UINT64);
+
+typedef UINT64(*__Free)();
+typedef UINT64 (*__GetContactMgr)();
+typedef UINT64 (*__GetContactList)(UINT64,UINT64);
+
+typedef UINT64 (*__GetChatRoomMgr)();
+typedef UINT64 (*__NewChatRoomInfo)(UINT64);
+typedef UINT64 (*__FreeChatRoomInfo)(UINT64);
+typedef UINT64 (*__GetChatRoomDetailInfo)(UINT64,UINT64,UINT64,UINT64);
+typedef UINT64 (*__DoAddMemberToChatRoom)(UINT64,UINT64,UINT64,UINT64);
+
+typedef UINT64 (*__DoModChatRoomMemberNickName)(UINT64,UINT64,UINT64,UINT64);
+typedef UINT64 (*__DoDelMemberFromChatRoom)(UINT64,UINT64,UINT64);
+typedef UINT64 (*__GetMemberFromChatRoom)(UINT64,UINT64,UINT64);
+typedef UINT64 (*__NewChatRoom)(UINT64);
+typedef UINT64 (*__FreeChatRoom)(UINT64);
+
+typedef UINT64 (*__DoTopMsg)(UINT64,UINT64);
+typedef UINT64 (*__RemoveTopMsg)(UINT64,UINT64,UINT64);
+typedef UINT64 (*__InviteMemberToChatRoom)(UINT64,UINT64,UINT64,UINT64);
+
+typedef UINT64 (*__CreateChatRoom)(UINT64,UINT64,UINT64);
+typedef UINT64 (*__QuitChatRoom)(UINT64,UINT64,UINT64);
+typedef UINT64 (*__ForwardMsg)(UINT64,UINT64,UINT64,UINT64);
+
+typedef UINT64 (*__GetSNSFirstPage)(UINT64,UINT64,UINT64);
+typedef UINT64 (*__GetSNSNextPageScene)(UINT64,UINT64);
+
+typedef UINT64 (*__GetSNSDataMgr)();
+typedef UINT64 (*__GetSnsTimeLineMgr)();
+typedef UINT64 (*__GetMgrByPrefixLocalId)(UINT64,UINT64);
+typedef UINT64 (*__AddFavFromMsg)(UINT64,UINT64);
+typedef UINT64 (*__GetChatMgr)();
+typedef UINT64 (*__GetFavoriteMgr)();
+typedef UINT64 (*__AddFavFromImage)(UINT64,UINT64,UINT64);
+typedef UINT64 (*__GetContact)(UINT64,UINT64,UINT64);
+typedef UINT64 (*__NewContact)(UINT64);
+typedef UINT64 (*__FreeContact)(UINT64);
+typedef UINT64 (*__NewMMReaderItem)(UINT64);
+typedef UINT64 (*__FreeMMReaderItem)(UINT64);
+typedef UINT64 (*__ForwordPublicMsg)(UINT64,UINT64,UINT64);
+typedef UINT64 (*__NewAppMsgInfo)(UINT64);
+typedef UINT64 (*__FreeAppMsgInfo)(UINT64);
+typedef UINT64 (*__ParseAppMsgXml)(UINT64,UINT64,UINT64);
+typedef UINT64 (*__GetPreDownLoadMgr)();
+typedef UINT64 (*__PushAttachTask)(UINT64,UINT64,UINT64,UINT64);
+typedef UINT64 (*__GetCustomSmileyMgr)();
+typedef UINT64 (*__SendCustomEmotion)(UINT64,UINT64,UINT64,UINT64,UINT64,UINT64,UINT64,UINT64);
+typedef UINT64 (*__JsApiShareAppMessage)(UINT64);
+typedef UINT64 (*__InitJsConfig)(UINT64,UINT64);
+typedef UINT64 (*__SendApplet)(UINT64,UINT64,UINT64,UINT64);
+typedef UINT64 (*__SendAppletSecond)(UINT64,UINT64,UINT64,UINT64,UINT64,UINT64);
+typedef UINT64 (*__GetAppInfoByWaid)(UINT64,UINT64);
+typedef UINT64 (*__CopyShareAppMessageRequest)(UINT64,UINT64);
+typedef UINT64 (*__NewWAUpdatableMsgInfo)(UINT64);
+typedef UINT64 (*__FreeWAUpdatableMsgInfo)(UINT64);
+typedef UINT64 (*__SendPatMsg)(UINT64,UINT64);
+typedef UINT64 (*__GetOCRManager)();
+typedef UINT64 (*__DoOCRTask)(UINT64,UINT64,UINT64,UINT64,UINT64);
+
+
+}  // namespace function
+namespace prototype {
+
+#include <string>
+#include <vector>
+
+struct WeChatString {
+  wchar_t *ptr;
+  DWORD length;
+  DWORD max_length;
+  INT64 c_ptr = 0;
+  DWORD c_len = 0;
+  WeChatString() { WeChatString(NULL); }
+
+  WeChatString(const std::wstring &s) {
+    ptr = (wchar_t *)(s.c_str());
+    length = static_cast<DWORD>(s.length());
+    max_length = static_cast<DWORD>(s.length());
+  }
+  WeChatString(const wchar_t *pStr) { WeChatString((wchar_t *)pStr); }
+  WeChatString(int tmp) {
+    ptr = NULL;
+    length = 0x0;
+    max_length = 0x0;
+  }
+  WeChatString(wchar_t *pStr) {
+    ptr = pStr;
+    length = static_cast<DWORD>(wcslen(pStr));
+    max_length = static_cast<DWORD>(wcslen(pStr));
+  }
+  void set_value(const wchar_t *pStr) {
+    ptr = (wchar_t *)pStr;
+    length = static_cast<DWORD>(wcslen(pStr));
+    max_length = static_cast<DWORD>(wcslen(pStr) * 2);
   }
 };
 
-struct ChatRoomInner{
-  char* members;
-  wchar_t* chat_room;
-  wchar_t* admin;
-  ~ChatRoomInner(){
-    delete []members;
-    delete []chat_room;
-    delete []admin;
+struct WeChatStr{
+  char * ptr;
+  INT64  buf;
+  INT64  len;
+  INT64  maxlen;
+
+   WeChatStr(const char* p) {
+    ptr = (char *)p;
+    buf = 0;
+    len = strlen(p);
+    maxlen = len | 0xF;
+  }
+   WeChatStr() {
+    ptr = NULL;
+    buf = 0;
+    len = 0;
+    maxlen = 0xF;
   }
 };
 
-struct UserInfo {
-  int error_code;
-  wchar_t *keyword;
-  int keyword_len;
-  wchar_t *v3;
-  int v3_len;
-  wchar_t *nickname;
-  int nickname_len;
-  wchar_t *signature;
-  int signature_len;
-  wchar_t *v2;
-  int v2_len;
-  wchar_t *nation;
-  int nation_len;
-  wchar_t *province;
-  int province_len;
-  wchar_t *city;
-  int city_len;
-  wchar_t *big_image;
-  int big_image_len;
-  wchar_t *small_image;
-  int small_image_len;
-  DWORD sex;
-  BOOL over;
-};
+}  // namespace prototype
+namespace offset {
+const UINT64 kGetAccountServiceMgr = 0x8c1230;
+const UINT64 kSyncMsg = 0xc39680;
+const UINT64 kSyncMsgNext = 0xc39680;
+const UINT64 kGetCurrentDataPath = 0xf5d130;
+const UINT64 kGetAppDataSavePath = 0x12d7040;
+const UINT64 kGetSendMessageMgr = 0x8c00e0;
+const UINT64 kSendTextMsg = 0xfcd8d0;
+const UINT64 kFreeChatMsg = 0x8aaa00;
 
-struct AtInner{
-  DWORD start;
-  DWORD finsh;
-  DWORD end;
-};
+const UINT64 kDoAddMsg = 0x1010d80;
+const UINT64 kSendImageMsg = 0xfc3d30;
+const UINT64 kChatMsgInstanceCounter = 0x8c7fd0;
+const UINT64 kSendFileMsg = 0xdd27f0;
+const UINT64 kGetAppMsgMgr = 0x8c33f0;
+const UINT64 kGetContactMgr = 0x8ae3d0;
+const UINT64 kGetContactList = 0xeab270;
 
-struct ChatMsg {
-  DWORD **field0_0x0;
-  DWORD field1_0x4;
-  ULONG64 sequence;
-  DWORD field3_0x10;
-  DWORD field4_0x14;
-  ULONG64 msgSequence;
-  DWORD localId;
-  DWORD field7_0x24;
-  DWORD field8_0x28;
-  DWORD field9_0x2c;
-  ULONG64 msgId; 
-  DWORD type;
-  DWORD isSendMsg;
-  DWORD msgStatus;     
-  DWORD timestamp;     
-  WeChatString talker; 
-  DWORD field16_0x5c;
-  DWORD field17_0x60;
-  DWORD field18_0x64;
-  DWORD field19_0x68;
-  DWORD field20_0x6c;
-  WeChatString content; 
-  DWORD field22_0x84;
-  DWORD field23_0x88;
-  DWORD field24_0x8c;
-  DWORD field25_0x90;
-  DWORD field26_0x94;
-  DWORD field27_0x98;
-  DWORD field28_0x9c;
-  DWORD field29_0xa0;
-  DWORD field30_0xa4;
-  DWORD field31_0xa8;
-  DWORD field32_0xac;
-  DWORD field33_0xb0;
-  DWORD field34_0xb4;
-  DWORD field35_0xb8;
-  DWORD field36_0xbc;
-  DWORD field37_0xc0;
-  DWORD field38_0xc4;
-  DWORD field39_0xc8;
-  DWORD field40_0xcc;
-  DWORD field41_0xd0;
-  DWORD field42_0xd4;
-  DWORD field43_0xd8;
-  DWORD field44_0xdc;
-  DWORD field45_0xe0;
-  DWORD field46_0xe4;
-  DWORD field47_0xe8;
-  DWORD field48_0xec;
-  DWORD field49_0xf0;
-  DWORD field50_0xf4;
-  DWORD field51_0xf8;
-  DWORD field52_0xfc;
-  DWORD field53_0x100;
-  DWORD field54_0x104;
-  DWORD field55_0x108;
-  DWORD field56_0x10c;
-  DWORD field57_0x110;
-  DWORD field58_0x114;
-  DWORD field59_0x118;
-  DWORD field60_0x11c;
-  DWORD field61_0x120;
-  DWORD field62_0x124;
-  DWORD field63_0x128;
-  DWORD field64_0x12c;
-  DWORD field65_0x130;
-  DWORD field66_0x134;
-  DWORD field67_0x138;
-  DWORD field68_0x13c;
-  DWORD field69_0x140;
-  DWORD field70_0x144;
-  DWORD field71_0x148;
-  DWORD field72_0x14c;
-  DWORD field73_0x150;
-  DWORD field74_0x154;
-  DWORD field75_0x158;
-  DWORD field76_0x15c;
-  DWORD field77_0x160;
-  DWORD field78_0x164;
-  DWORD field79_0x168;
-  DWORD field80_0x16c;
-  DWORD field81_0x170;
-  WeChatString fromGroup;
-  WeChatString sign;
-  WeChatString thumbPath;
-  WeChatString path;
-  DWORD field86_0x1c4;
-  DWORD field87_0x1c8;
-  DWORD field88_0x1cc;
-  DWORD field89_0x1d0;
-  DWORD field90_0x1d4;
-  DWORD field91_0x1d8;
-  DWORD field92_0x1dc;
-  DWORD field93_0x1e0;
-  DWORD field94_0x1e4;
-  DWORD field95_0x1e8;
-  DWORD field96_0x1ec;
-  WeChatString signature;
-  DWORD field98_0x204;
-  DWORD field99_0x208;
-  DWORD field100_0x20c;
-  DWORD field101_0x210;
-  DWORD field102_0x214;
-  DWORD field103_0x218;
-  DWORD field104_0x21c;
-  DWORD field105_0x220;
-  DWORD field106_0x224;
-  DWORD field107_0x228;
-  DWORD field108_0x22c;
-  DWORD field109_0x230;
-  DWORD field110_0x234;
-  DWORD field111_0x238;
-  DWORD field112_0x23c;
-  DWORD field113_0x240;
-  DWORD field114_0x244;
-  DWORD field115_0x248;
-  DWORD field116_0x24c;
-  DWORD field117_0x250;
-  DWORD field118_0x254;
-  DWORD field119_0x258;
-  DWORD field120_0x25c;
-  DWORD field121_0x260;
-  DWORD field122_0x264;
-  DWORD field123_0x268;
-  DWORD field124_0x26c;
-  DWORD field125_0x270;
-  DWORD field126_0x274;
-  DWORD field127_0x278;
-  DWORD field128_0x27c;
-  DWORD field129_0x280;
-  DWORD field130_0x284;
-  DWORD field131_0x288;
-  DWORD field132_0x28c;
-  DWORD field133_0x290;
-  DWORD field134_0x294;
-  DWORD field135_0x298;
-  DWORD field136_0x29c;
-  DWORD field137_0x2a0;
-  DWORD field138_0x2a4;
-  DWORD field139_0x2a8;
-  DWORD field140_0x2ac;
-  DWORD field141_0x2b0;
-  int field142_0x2b4;
-};
+const UINT64 k_sqlite3_exec = 0x252e340;
+const UINT64 k_sqlite3_prepare =  0x2535eb0;
+const UINT64 k_sqlite3_open = 0x256d6b0;
+const UINT64 k_sqlite3_backup_init= 0x24e8450;
+const UINT64 k_sqlite3_errcode = 0x256bfb0;
+const UINT64 k_sqlite3_close = 0x256a110;
+const UINT64 k_sqlite3_step =  0x24f2350;
+const UINT64 k_sqlite3_column_count =  0x24f2b70;
+const UINT64 k_sqlite3_column_name =  0x24f3570;
+const UINT64 k_sqlite3_column_type =  0x24f33c0;
+const UINT64 k_sqlite3_column_blob = 0x24f2ba0;
+const UINT64 k_sqlite3_column_bytes =  0x24f2c90;
+const UINT64 k_sqlite3_finalize =  0x24f1400;
 
-struct InnerMessageStruct {
-  char *buffer;
-  int length;
-  ~InnerMessageStruct() {
-    if (this->buffer != NULL) {
-      delete[] this->buffer;
-      this->buffer = NULL;
-    }
-  }
-};
+const UINT64 kGPInstance = 0x3a6f908;
+const UINT64 kMicroMsgDB = 0xb8;
+const UINT64 kChatMsgDB = 0x2c8;
+const UINT64 kMiscDB = 0x5f0;
+const UINT64 kEmotionDB = 0x838;
+const UINT64 kMediaDB = 0xef8;
+const UINT64 kBizchatMsgDB = 0x1a70;
+const UINT64 kFunctionMsgDB = 0x1b48;
+const UINT64 kDBName = 0x28;
+const UINT64 kStorageStart = 0x0;
+const UINT64 kStorageEnd = 0x0;
+const UINT64 kMultiDBMgr = 0x3acfb68;
+const UINT64 kPublicMsgMgr = 0x3acc268;
+const UINT64 kFavoriteStorageMgr = 0x3acf0d0;
 
-struct Unkown{
-  DWORD field1 = 0;
-  DWORD field2= 0;
-  DWORD field3= 0;
-  DWORD field4= 0;
-  DWORD field5= 0;
-  DWORD field6= 0;
-};
+const UINT64 kChatRoomMgr = 0x8e9d30;
+const UINT64 kGetChatRoomDetailInfo = 0xe73590;
+const UINT64 kNewChatRoomInfo = 0x12006b0;
+const UINT64 kFreeChatRoomInfo = 0x1200890;
+const UINT64 kDoAddMemberToChatRoom = 0xe63c70;
+const UINT64 kDoModChatRoomMemberNickName = 0xe6db00;
+const UINT64 kDelMemberFromChatRoom = 0xe64290;
+const UINT64 kGetMemberFromChatRoom = 0xe74de0;
+const UINT64 kNewChatRoom = 0x11fde50;
+const UINT64 kFreeChatRoom = 0x11fe030;
+
+const UINT64 kTopMsg = 0xa5e4f0;
+const UINT64 kRemoveTopMsg = 0xe787b0;
+const UINT64 kInviteMember = 0xe63650;
+const UINT64 kHookLog = 0x1304e60;
+
+const UINT64 kCreateChatRoom = 0xe63340;
+const UINT64 kQuitChatRoom = 0xe6e3b0;
+const UINT64 kForwardMsg = 0xfcd0f0;
+
+const UINT64 kOnSnsTimeLineSceneFinish = 0x1a73150;
+const UINT64 kSNSGetFirstPage = 0x1a51dd0;
+const UINT64 kSNSGetNextPageScene = 0x1a77240;
+const UINT64 kSNSDataMgr = 0xeebda0;
+const UINT64 kSNSTimeLineMgr = 0x19e83a0;
+const UINT64 kGetMgrByPrefixLocalId = 0xe4add0;
+const UINT64 kAddFavFromMsg = 0x1601520;
+const UINT64 kGetChatMgr = 0x8f0400;
+const UINT64 kGetFavoriteMgr = 0x8c69b0;
+const UINT64 kAddFavFromImage = 0x160b920;
+const UINT64 kGetContact = 0xEA5F90;
+const UINT64 kNewContact = 0x1212e40;
+const UINT64 kFreeContact = 0x12134e0;
+const UINT64 kNewMMReaderItem = 0x8c79a0;
+const UINT64 kFreeMMReaderItem = 0x8c6da0;
+const UINT64 kForwordPublicMsg = 0xddc6c0;
+const UINT64 kParseAppMsgXml = 0x11b0a70;
+const UINT64 kNewAppMsgInfo = 0x91a550;
+const UINT64 kFreeAppMsgInfo = 0x8fd1a0;
+const UINT64 kGetPreDownLoadMgr = 0x9996f0;
+const UINT64 kPushAttachTask = 0x9c0080;
+const UINT64 kGetCustomSmileyMgr = 0x915c00;
+const UINT64 kSendCustomEmotion = 0xec0a40;
+const UINT64 kNewJsApiShareAppMessage = 0x13be1a0;
+const UINT64 kInitJsConfig = 0x137bc00;
+const UINT64 kSendApplet = 0x13c0920;
+const UINT64 kSendAppletSecond = 0x13c1150;
+const UINT64 kGetAppInfoByWaid = 0x13c5790;
+const UINT64 kCopyShareAppMessageRequest = 0x13c0670;
+const UINT64 kNewWAUpdatableMsgInfo = 0x919ca0;
+const UINT64 kFreeWAUpdatableMsgInfo = 0x8fc230;
+const UINT64 kSendPatMsg = 0x195f340;
+const UINT64 kGetOCRManager = 0x999780;
+const UINT64 kDoOCRTask = 0x190b2a0;
+
+}  // namespace offset
+}  // namespace V3_9_5_81
+
+}  // namespace wxhelper
+
 #endif

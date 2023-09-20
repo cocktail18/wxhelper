@@ -1,10 +1,10 @@
 # wxhelper
-wechat hook 。PC端微信逆向学习。支持3.8.0.41，3.8.1.26, 3.9.0.28, 3.9.2.23版本。
+wechat hook 。PC端微信逆向学习。支持3.8.0.41，3.8.1.26, 3.9.0.28, 3.9.2.23,3.9.2.26版本。
 #### 免责声明:
 本仓库发布的内容，仅用于学习研究，请勿用于非法用途和商业用途！如因此产生任何法律纠纷，均与作者无关！
 
 #### 项目说明：
-本项目是个人学习学习逆向的项目，参考  https://github.com/ljc545w/ComWeChatRobot ，在此基础上实现了微信的的其它版本的部分内容。
+<font color= "#dd0000">本项目是逆向练习项目，可能会造成封号等后果。请自行承担风险。仅用于学习研究，请勿于非法用途。</font>  
 
 #### 实现原理：  
 逆向分析PC端微信客户端，定位相关功能关键Call，编写dll调用关键Call。然后将该dll文件注入到微信进程。   
@@ -19,13 +19,13 @@ dll在注入成功时，创建了一个默认端口为19088的http服务端，�
 
 ```
 #### 使用说明：
-支持的版本3.8.0.41、3.8.1.26、3.9.0.28、3.9.2.23 。  
+支持的版本3.8.0.41、3.8.1.26、3.9.0.28、3.9.2.23、3.9.2.26 、3.9.5.81。  
 源码和主要实现在相应的分支内。  
 src:主要的dll代码  
 tool：简单的注入工具，一个是控制台，一个是图形界面。  
-python: tcpserver.py: 简单的服务器，用以接收消息内容。decrpty.py: 微信数据库解密工具。      
+python: tcpserver.py: 简单的服务器，用以接收消息内容。decrpty.py: 微信数据库解密工具。   http_server.py：http server端。     
 source: 简单的命令行远程注入源码。   
-
+其他目录：热心作者提供的一些客户端。
 
 #### 0.首先安装对应的版本的微信，分支名称即代表的是微信对应的版本。dll的前缀都会带有微信版本。
 #### 1.使用注入工具注入wxhelper.dll,注入成功后，即可通过postman直接调用对应的接口。
@@ -62,7 +62,9 @@ cmake
 
 vcpkg
 #### 编译构建
+
 先准备好编译环境。   
+#### <font color= "#dd0000"> 以下是x86环境构建，3.9.5.81是x64环境，具体参考对应分支。</font> 
 ```
 cd wxhelper  
 mkdir build  
@@ -123,6 +125,7 @@ cmake --build ..
     // -u 卸载程序名   -d 卸载dll名称
     // -m pid  关闭微信互斥体，多开微信
     // -P port 指定http端口，需要使用 specify-port 分支的生成的dll
+    // -I 注入程序的pid
     //注入  
     ConsoleInject.exe  -i demo.exe -p E:\testInject.dll
     //卸载 
@@ -130,7 +133,17 @@ cmake --build ..
     //多开
     ConsoleInject.exe  -m 1222
     // 注入并指定http端口
-    ConsoleInject.exe  -i demo.exe -p E:\testInject.dll  -P  18888
+    ConsoleInject.exe  -i demo.exe -p E:\testInject.dll  -P  18888   
+    // 注入指定pid并关闭多开限制
+    ConsoleInject.exe  -I 15048 -p E:\testInject.dll  -m 15048  
+  
+```
+
+6.如果想改变端口，可以在微信目录下创建config.ini配置文件,修改端口即可。不创建则默认端口19088。   
+``` shell
+[config]
+port=19099
+
 ```
 
 #### 更新说明
@@ -165,6 +178,10 @@ cmake --build ..
 2023-03-30 ： 新增获取语音文件(推荐使用这个非hook接口)      
 
 2023-04-08 : 3.9.2.23版本功能更新   
+
+2023-06-05 ：3.9.2.26版本更新   
+
+2023-07-07 ：3.9.5.81版本更新  
 
 #### 功能预览：
 0.检查是否登录    
@@ -207,9 +224,21 @@ cmake --build ..
 55.获取联系人或者群名称    
 56.获取消息附件（图片，视频，文件）   
 57.获取语音文件(silk3格式)    
+58.登录二维码   
+59.邀请入群   
+60.获取群/群成员详情    
+61.撤回消息    
+62.发送公众号消息   
+63.转发公众号消息   
+64.发送小程序   
+65.退款    
+66.下载头像(勿用,没什么用)       
 #### 感谢
 https://github.com/ljc545w/ComWeChatRobot  
 
 https://github.com/NationalSecurityAgency/ghidra  
 
 https://github.com/x64dbg/x64dbg  
+
+#### 讨论组
+https://t.me/+LmvAauweyUpjYzJl  
