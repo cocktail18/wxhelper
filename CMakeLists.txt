@@ -6,9 +6,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /D '_UNICODE' /D 'UNICODE'")
+set(unofficial-mongoose_DIR C:/Tools/vcpkg/installed/x86-windows/share/unofficial-mongoose)
 
 file(GLOB CPP_FILES  ${PROJECT_SOURCE_DIR}/src/*.cc  ${PROJECT_SOURCE_DIR}/src/*.cpp)
-
 
 
 include_directories(${VCPKG_INSTALLED_DIR}/x86-windows/include)

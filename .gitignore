@@ -33,3 +33,5 @@
 /out
 CMakePresets.json
 .vscode
+.vs
+spdlog/
