@@ -14,7 +14,7 @@ void Log::Initialize() {
   conf.setGlobally(el::ConfigurationType::Enabled, "true");
   // 设置日志文件目录以及文件名
   conf.setGlobally(el::ConfigurationType::Filename,
-                   "log\\log_%datetime{%Y%M%d %H%m%s}.log");
+                   "logs\\log_"+ std::to_string(GetCurrentProcessId()) +"_%datetime{%Y%M%d %H%m%s}.log");
   // 设置日志文件最大文件大小
   conf.setGlobally(el::ConfigurationType::MaxLogFileSize, "20971520");
   // 是否写入文件
@@ -28,7 +28,7 @@ void Log::Initialize() {
   #ifdef _DEBUG
   conf.setGlobally(el::ConfigurationType::LogFlushThreshold, "1");
   #else
-  conf.setGlobally(el::ConfigurationType::LogFlushThreshold, "100");
+  conf.setGlobally(el::ConfigurationType::LogFlushThreshold, "1");
   #endif
   // 设置配置文件
   el::Loggers::reconfigureAllLoggers(conf);

@@ -12,7 +12,7 @@ void GlobalContext::initialize(HMODULE module) {
   DWORD base = Utils::GetWeChatWinBase();
   config.emplace();
   config->Initialize();
-  log.emplace();
+  log.emplace();  
   log->Initialize();
   hide_module.emplace();
   #ifndef _DEBUG
